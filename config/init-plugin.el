@@ -40,6 +40,11 @@
 ;; terminal 
 (use-package vterm :ensure t)
 
+;; Search in the file
+(use-package swiper
+  :ensure nil
+  :bind (("C-s" . swiper)))
+
 (provide 'init-plugin)
 
 ;;; init-plugin.el ends here

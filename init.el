@@ -9,6 +9,7 @@
 (require 'init-theme)
 
 (require 'init-tree)
+(require 'init-tabbar)
 
 (require 'init-lsp)
 

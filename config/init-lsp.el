@@ -2,14 +2,7 @@
 
 ;; completion front end
 (use-package company
-  :hook (after-init . global-company-mode)
-  :config
-  (setq company-tooltip-align-annotations t ; 注释贴右侧对齐
-        company-tooltip-limit 20            ; 菜单里可选项数量
-        company-show-numbers t              ; 显示编号（然后可以用 M-数字 快速选定某一项）
-        company-idle-delay .0            ; 延时多少秒后弹出
-        company-minimum-prefix-length 1     ; 至少几个字符后开始补全
-  ))
+  :hook (after-init . global-company-mode))
 
 ;; lsp packages
 (use-package lsp-mode
@@ -21,7 +14,10 @@
           c++-mode) . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
+  :commands lsp
+  :config
+  (setq read-process-output-max (* 1024 1024))
+  (setq gc-cons-threshold 100000000))
 
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode)
