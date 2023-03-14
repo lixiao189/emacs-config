@@ -10,6 +10,7 @@
   (evil-set-leader 'normal (kbd "<SPC>")) ;; set leader key
 
   ;; editor
+  (evil-define-key 'normal 'global (kbd "<leader>q") 'evil-quit)
   (evil-define-key 'normal 'global (kbd "<leader>m") 'treemacs)
   (evil-define-key 'normal 'global (kbd "<leader>w") 'save-buffer)
   (evil-define-key 'normal 'global (kbd "<leader>t") 'vterm)
@@ -29,6 +30,9 @@
   ;; keybinding for finding
   (evil-define-key 'normal 'global (kbd "<leader>ff") 'counsel-find-file)
   (evil-define-key 'normal 'global (kbd "<leader>fg") 'counsel-ag)
+
+  ;; keybinding for git
+  (evil-define-key 'normal 'global (kbd "<leader>gr") 'diff-hl-revert-hunk)
 
   ;; keybinding for buffer
   (evil-define-key 'normal 'global (kbd "<leader>bs") 'switch-to-buffer)
