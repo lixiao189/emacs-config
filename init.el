@@ -15,6 +15,7 @@
 (require 'init-tree)
 (require 'init-tabbar)
 (require 'init-git)
+(require 'init-evil)
 
 (require 'init-lsp)
 

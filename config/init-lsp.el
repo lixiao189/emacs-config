@@ -11,7 +11,6 @@
   (setq company-show-numbers t) ;; 给选项编号 (按快捷键 M-1、M-2 等等来进行选择).
   (setq company-selection-wrap-around t)
   (setq company-transformers '(company-sort-by-occurrence)))
-
 (use-package yasnippet
   :config
   (yas-global-mode 1))
@@ -31,17 +30,9 @@
   :config
   (setq lsp-headerline-breadcrumb-icons-enable nil))
 
-;; optionally
 (use-package lsp-ui :commands lsp-ui-mode)
-;; if you are helm user
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-;; if you are ivy user
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-
-;; optionally if you want to use debugger
-(use-package dap-mode)
-;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 (provide 'init-lsp)
 
