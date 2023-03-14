@@ -17,6 +17,8 @@
 (setq display-line-numbers-type 'relative)   ; （可选）显示相对行号
 (add-to-list 'default-frame-alist '(width . 120))  ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
 (add-to-list 'default-frame-alist '(height . 55)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
+(set-frame-font "SF mono 13" nil t)          ; font settings
+
 
 (provide 'basic)
 ;;; basic.el ends here

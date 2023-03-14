@@ -45,6 +45,21 @@
   :ensure nil
   :bind (("C-s" . swiper)))
 
+(use-package dirvish
+  :config (dirvish-override-dired-mode)
+  (when (eq system-type 'darwin)
+    (setq insert-directory-program "gls")))
+
+(use-package beacon
+  :config (beacon-mode 1))
+
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-center-content t
+        dashboard-show-shortcuts nil))
+
 (provide 'init-plugin)
 
 ;;; init-plugin.el ends here
