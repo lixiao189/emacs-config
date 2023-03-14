@@ -14,17 +14,25 @@
 (require 'use-package)
 (setq use-package-always-ensure t) ; 让 use-package 永远按需安装软件包
 
+;; config file benchmark
+(use-package esup
+  :ensure t
+  ;; To use MELPA Stable use ":pin melpa-stable",
+  :pin melpa)
+
 ;; Vim key mode 
 (use-package evil
-  :config 
-  (require 'evil)
-  (evil-mode 1))
-
-;; Telegram client
-(use-package telega
+  :ensure t
+  :init
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
   :config
-  (setq telega-proxies 
-  (list '(:server "127.0.0.1" :port 7890 :enable t :type (:@type "proxyTypeHttp")))))
+  (evil-mode 1))
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 (use-package counsel
   :config 
@@ -33,9 +41,6 @@
 (use-package which-key
     :config
     (which-key-mode))
-
-;; Git client 
-(use-package magit)
 
 ;; terminal 
 (use-package vterm :ensure t)
@@ -57,8 +62,10 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-center-content t
-        dashboard-show-shortcuts nil))
+  (setq dashboard-center-content t))
+
+(use-package move-text
+  :config (move-text-default-bindings))
 
 (provide 'init-plugin)
 
