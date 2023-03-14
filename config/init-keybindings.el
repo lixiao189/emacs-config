@@ -24,7 +24,8 @@
   (define-key evil-motion-state-map "L" 'evil-end-of-line)
   
   ;; keybinding for finding
-  (evil-define-key 'normal 'global (kbd "<leader>ff") 'find-file)
+  (evil-define-key 'normal 'global (kbd "<leader>ff") 'counsel-find-file)
+  (evil-define-key 'normal 'global (kbd "<leader>fg") 'counsel-ag)
 
   ;; keybinding for buffer
   (evil-define-key 'normal 'global (kbd "<leader>bs") 'switch-to-buffer)
