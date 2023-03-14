@@ -20,10 +20,6 @@
   ;; To use MELPA Stable use ":pin melpa-stable",
   :pin melpa)
 
-(use-package counsel
-  :config 
-  (ivy-mode 1))
-
 (use-package which-key
     :config
     (which-key-mode))
@@ -31,19 +27,25 @@
 ;; terminal 
 (use-package vterm :ensure t)
 
-;; Search in the file
-(use-package swiper
-  :ensure nil
-  :bind (("C-s" . swiper)))
-
 (use-package beacon
   :config (beacon-mode 1))
+
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
 
 (use-package dashboard
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-center-content t))
+  (setq dashboard-center-content t)
+  (setq dashboard-items '((recents  . 10)
+                        (projects . 5)
+                        (agenda . 5))))
 
 (use-package move-text
   :config (move-text-default-bindings))
