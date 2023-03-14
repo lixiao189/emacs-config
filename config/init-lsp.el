@@ -30,7 +30,8 @@
   :commands lsp
   :config
   (setq read-process-output-max (* 1024 1024))
-  (setq gc-cons-threshold 100000000))
+  (setq gc-cons-threshold 100000000)
+  (setq lsp-headerline-breadcrumb-icons-enable nil))
 
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode)
