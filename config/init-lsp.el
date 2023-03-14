@@ -12,6 +12,10 @@
   (setq company-selection-wrap-around t)
   (setq company-transformers '(company-sort-by-occurrence)))
 
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
+
 ;; lsp packages
 (use-package lsp-mode
   :init
