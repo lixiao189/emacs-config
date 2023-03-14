@@ -19,6 +19,9 @@
   (evil-define-key 'normal 'global (kbd "C-j") 'evil-window-down)
   (evil-define-key 'normal 'global (kbd "C-k") 'evil-window-up)
   (evil-define-key 'normal 'global (kbd "C-l") 'evil-window-right)
+  (evil-define-key 'treemacs treemacs-mode-map (kbd "C-h") 'evil-window-left)
+  (evil-define-key 'treemacs treemacs-mode-map (kbd "C-l") 'evil-window-right)
+
 
   (define-key evil-motion-state-map "H" 'evil-first-non-blank)
   (define-key evil-motion-state-map "L" 'evil-end-of-line)

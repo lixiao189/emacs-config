@@ -2,6 +2,10 @@
   :ensure t
   :defer t)
 
+(use-package treemacs-all-the-icons
+  :config
+  (treemacs-load-all-the-icons-with-workaround-font "Hermit"))
+
 (use-package treemacs-evil
   :after (treemacs evil)
   :ensure t)
