@@ -22,7 +22,6 @@
   (setq lsp-keymap-prefix "C-c l")
   :hook (((
         ;; add mode here
-        python-mode 
         c++-mode
         lisp-mode
   ) . lsp) (lsp-mode . lsp-enable-which-key-integration))
@@ -33,6 +32,13 @@
 (use-package lsp-ui :commands lsp-ui-mode)
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+
+;; lsp for pyright
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
 
 (provide 'init-lsp)
 

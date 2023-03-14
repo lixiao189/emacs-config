@@ -16,7 +16,9 @@
 
 ;; Other UI plugins
 (use-package all-the-icons
-  :if (display-graphic-p))
+  :if (display-graphic-p)
+  :config
+  (setq inhibit-compacting-font-caches t))
 
 (use-package doom-modeline
   :ensure t
