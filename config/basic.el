@@ -17,7 +17,7 @@
 (setq display-line-numbers-type 'relative)   ; （可选）显示相对行号
 (add-to-list 'default-frame-alist '(width . 175))  ; （可选）设定启动图形界面时的初始 Frame 宽度（字符数）
 (add-to-list 'default-frame-alist '(height . 50)) ; （可选）设定启动图形界面时的初始 Frame 高度（字符数）
-(set-frame-font "SF mono 12" nil t)          ; font settings
+(set-frame-font "CaskaydiaCove Nerd Font Mono 12" nil t)          ; font settings
 
 
 (provide 'basic)

@@ -20,20 +20,6 @@
   ;; To use MELPA Stable use ":pin melpa-stable",
   :pin melpa)
 
-;; Vim key mode 
-(use-package evil
-  :ensure t
-  :init
-  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
-  (setq evil-want-keybinding nil)
-  :config
-  (evil-mode 1))
-(use-package evil-collection
-  :after evil
-  :ensure t
-  :config
-  (evil-collection-init))
-
 (use-package counsel
   :config 
   (ivy-mode 1))
@@ -49,11 +35,6 @@
 (use-package swiper
   :ensure nil
   :bind (("C-s" . swiper)))
-
-(use-package dirvish
-  :config (dirvish-override-dired-mode)
-  (when (eq system-type 'darwin)
-    (setq insert-directory-program "gls")))
 
 (use-package beacon
   :config (beacon-mode 1))
